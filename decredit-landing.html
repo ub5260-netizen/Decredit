@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decredit | ביטוח סיכונים פוליטיים ואשראי מובנה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F3862;
+    --ink-soft:#48597D;
+    --paper:#FFFFFF;
+    --paper-raised:#EEF1F7;
+    --accent:#7C93BE;
+    --accent-light:#B8C9E3;
+    --line:rgba(31,56,98,0.15);
+    --muted:#667085;
+    --max:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Assistant', sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Rubik', sans-serif;
+    font-weight:600;
+    line-height:1.25;
+    margin:0;
+    text-wrap:balance;
+  }
+  a{color:inherit;}
+  .ltr{unicode-bidi:isolate; direction:ltr; display:inline-block;}
+  .wrap{max-width:var(--max); margin-inline:auto; padding-inline:24px;}
+  .rule{border:none; border-top:1px solid var(--line); margin:0;}
+
+  /* ---------- Header ---------- */
+  header{padding-block:28px 0;}
+  .brand{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-bottom:22px;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand-logo{height:38px; width:auto; display:block;}
+  .brand-tag{
+    font-size:13px;
+    color:var(--muted);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding-block:64px 56px;
+    overflow:hidden;
+  }
+  .hero-route{
+    position:absolute;
+    inset-inline-end:-60px;
+    top:-10px;
+    width:420px;
+    max-width:60vw;
+    opacity:0.7;
+    pointer-events:none;
+  }
+  .kicker{
+    font-size:15px;
+    color:var(--ink);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(30px, 5vw, 44px);
+    max-width:14ch;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    max-width:52ch;
+    font-size:19px;
+    color:var(--ink-soft);
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    margin-top:34px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1px solid var(--ink);
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn-primary:hover{background:#16294A; border-color:#16294A;}
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+  }
+  .btn-ghost:hover{background:var(--paper-raised);}
+
+  /* ---------- Sections shared ---------- */
+  section{padding-block:52px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:28px;
+  }
+  .section-head h2{font-size:26px;}
+  .section-head .index{
+    font-family:'Rubik', sans-serif;
+    color:var(--accent);
+    font-size:15px;
+    font-weight:500;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .stat-row{
+    display:flex;
+    gap:36px;
+    margin-top:30px;
+    flex-wrap:wrap;
+  }
+  .stat b{
+    display:block;
+    font-family:'Rubik', sans-serif;
+    font-size:32px;
+    color:var(--ink);
+  }
+  .stat span{
+    font-size:14px;
+    color:var(--muted);
+  }
+
+  /* ---------- Services ---------- */
+  .service{
+    padding-block:26px;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .service:last-child{border-bottom:1px solid var(--line);}
+  .service h3{font-size:21px;}
+  .service p{color:var(--ink-soft); max-width:60ch;}
+  .service ul{
+    margin:6px 0 0;
+    padding-inline-start:20px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+  .service li{margin-bottom:4px;}
+
+  /* ---------- Why ---------- */
+  .why-list{
+    display:grid;
+    gap:22px;
+  }
+  .why-item{
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:16px;
+    align-items:start;
+  }
+  .why-item svg{margin-top:3px;}
+  .why-item h3{font-size:18px; margin-bottom:4px;}
+  .why-item p{color:var(--ink-soft); margin:0;}
+
+  /* ---------- Audience ---------- */
+  .audience-row{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  .tag{
+    border:1px solid var(--line);
+    padding:9px 16px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-block{
+    background:var(--ink);
+    color:var(--paper);
+    padding-block:56px;
+  }
+  .cta-block h2{color:var(--paper); font-size:28px; max-width:16ch;}
+  .cta-block p{color:var(--accent-light); max-width:48ch; margin-top:14px;}
+  .cta-methods{
+    margin-top:30px;
+    display:grid;
+    gap:14px;
+  }
+  .cta-method{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-block:16px;
+  }
+  .cta-method:last-child{border-bottom:1px solid rgba(255,255,255,0.18);}
+  .cta-method .label{font-size:14px; color:var(--accent-light);}
+  .cta-method .value{font-family:'Assistant',sans-serif; font-weight:600; font-size:17px;}
+  .cta-method a{text-decoration:none;}
+  .cta-method a:hover{color:var(--accent-light);}
+
+  footer{
+    padding-block:28px 40px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  footer .disclaimer{max-width:60ch; margin-top:10px; line-height:1.6;}
+
+  @media (max-width:600px){
+    .hero-route{display:none;}
+    .service{grid-template-columns:1fr;}
+    .stat-row{gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="brand">
+    <img class="brand-logo" src="decredit-wordmark.png" alt="Decredit">
+    <div class="brand-tag">פתרונות מימון וביטוח ליצוא</div>
+  </div>
+  <hr class="rule">
+</header>
+
+<section class="hero wrap">
+  <svg class="hero-route" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="brandGradHe" x1="0" y1="300" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#1F3862"/>
+        <stop offset="1" stop-color="#B8C9E3"/>
+      </linearGradient>
+    </defs>
+    <path d="M20 250 C 100 180, 140 200, 190 130 S 300 40, 400 30" stroke="url(#brandGradHe)" stroke-width="1.4" stroke-dasharray="1 7" stroke-linecap="round"/>
+    <circle cx="20" cy="250" r="4" fill="#1F3862"/>
+    <circle cx="190" cy="130" r="4" fill="#7C93BE"/>
+    <circle cx="400" cy="30" r="5" fill="#B8C9E3"/>
+    <path d="M60 60 C 130 90, 160 60, 220 90 S 330 150, 380 190" stroke="url(#brandGradHe)" stroke-width="1" stroke-dasharray="1 6" stroke-linecap="round" opacity="0.5"/>
+  </svg>
+  <div class="kicker">יצואנים ומוסדות פיננסיים ישראלים</div>
+  <h1>מגינים על העסקאות שלכם מעבר לגבול, גם כשהסיכון אינו בשליטתכם</h1>
+  <p class="lede">Decredit מלווה יצואנים, בנקים ומוסדות מלווים ישראלים בבניית פתרונות ביטוח סיכונים פוליטיים ואשראי מובנה לעסקאות בשווקים מתעוררים — בגישה אישית ובמעל 25 שנות ניסיון בתחום.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#contact">לתיאום שיחה</a>
+    <a class="btn btn-ghost" href="#services">השירותים שלנו</a>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="about">
+  <div class="section-head">
+    <h2>מי אנחנו</h2>
+    <span class="index">אודות</span>
+  </div>
+  <div class="about-grid">
+    <p>Decredit הוא גוף ייעוץ וגישור ביטוחי עצמאי, המתמחה בביטוח סיכונים פוליטיים ואשראי מובנה לעסקאות ארוכות טווח. אנו פועלים לצד רשת ברוקרים בינלאומית מבוססת לונדון, המעניקה גישה לשוקי ביטוח מובילים בעולם — ומתרגמים את המורכבות הזו לפתרון פשוט וממוקד עבור הלקוח הישראלי: יצואן, בנק או גוף מלווה הפועל בשוק זר.</p>
+    <p>אנחנו מכירים את השטח: פרויקטי תשתית ואנרגיה, חקלאות וטכנולוגיה חקלאית, ומימון פרויקטים במדינות מתפתחות — ויודעים היכן טמון הסיכון האמיתי מול הסיכון שרק נראה כזה.</p>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><b>+25</b><span>שנות ניסיון בתחום</span></div>
+    <div class="stat"><b>PRI</b><span>ביטוח סיכונים פוליטיים</span></div>
+    <div class="stat"><b>SC</b><span>אשראי מובנה</span></div>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="services">
+  <div class="section-head">
+    <h2>השירותים שלנו</h2>
+    <span class="index">מה אנחנו עושים</span>
+  </div>
+
+  <div class="service">
+    <h3>ביטוח סיכונים פוליטיים (PRI)</h3>
+    <p>הגנה על נכסים, חוזים ותזרים מזומנים מפני פעולות ממשלתיות והפרות חוזה במדינות בהן אתם פועלים או מלווים.</p>
+    <ul>
+      <li>הפקעה או החרמה של נכסים</li>
+      <li>אי-המרה או הגבלת העברת מטבע מקומי</li>
+      <li>הפרת חוזה או אי-תשלום על ידי גוף ממשלתי</li>
+      <li>אלימות פוליטית, מלחמה ואי-שקט אזרחי</li>
+    </ul>
+  </div>
+
+  <div class="service">
+    <h3>אשראי מובנה (Structured Credit)</h3>
+    <p>פתרונות ביטוחיים המותאמים למבנה המימון של העסקה — עבור בנקים, גופים מלווים ויצואנים המבקשים להפחית את חשיפת האשראי שלהם בעסקאות ארוכות טווח מול לקוחות וממשלות בחו"ל.</p>
+    <ul>
+      <li>הגנה על תיקי אשראי ומימון פרויקטים</li>
+      <li>שיפור תנאי מימון והקצאת הון מול הרגולטור</li>
+      <li>ליווי מותאם למבנה העסקה, לא פוליסה מהמדף</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="why">
+  <div class="section-head">
+    <h2>למה Decredit</h2>
+    <span class="index">היתרון שלנו</span>
+  </div>
+  <div class="why-list">
+    <div class="why-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 6 L32 11 V19 C32 27 27 32 20 34 C13 32 8 27 8 19 V11 Z" stroke="#1F3862" stroke-width="1.4"/></svg>
+      <div>
+        <h3>עצמאות מלאה</h3>
+        <p>אנחנו לא כבולים למבטח יחיד — הבחירה בפתרון נעשית לפי האינטרס של הלקוח, לא לפי מכסת מכירות.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#1F3862" stroke-width="1.4"/><path d="M6 20 H34 M20 6 C24 12 24 28 20 34 C16 28 16 12 20 6Z" stroke="#1F3862" stroke-width="1.2"/></svg>
+      <div>
+        <h3>גישה לשווקים בינלאומיים</h3>
+        <p>שיתוף פעולה עם רשת ברוקרים מלונדון פותח גישה לשוקי ביטוח וחיתום מובילים, שאינם זמינים ישירות ללקוח בישראל.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 30 V16 L20 8 L32 16 V30" stroke="#1F3862" stroke-width="1.4"/><path d="M15 30 V22 H25 V30" stroke="#1F3862" stroke-width="1.4"/></svg>
+      <div>
+        <h3>ליווי אישי מקצה לקצה</h3>
+        <p>מהבנת הצורך והמיפוי הראשוני, דרך משא ומתן מול חתמים, ועד לניהול הפוליסה וטיפול בתביעה — ליווי אחד רציף.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="audience">
+  <div class="section-head">
+    <h2>למי זה מתאים</h2>
+    <span class="index">קהל היעד</span>
+  </div>
+  <div class="audience-row">
+    <span class="tag">יצואנים ישראלים לשווקים מתעוררים</span>
+    <span class="tag">בנקים וגופים מלווים</span>
+    <span class="tag">חברות תשתית ואנרגיה</span>
+    <span class="tag">משקיעים בפרויקטים בחו"ל</span>
+  </div>
+</section>
+
+<section class="cta-block" id="contact">
+  <div class="wrap">
+    <h2>מוכנים לבדוק את החשיפה שלכם?</h2>
+    <p>שלחו הודעה קצרה על העסקה או התיק שברצונכם להגן עליו — נחזור אליכם באותו יום עסקים.</p>
+    <div class="cta-methods">
+      <div class="cta-method">
+        <span class="label">וואטסאפ</span>
+        <a class="value ltr" href="https://wa.me/972500000000" target="_blank" rel="noopener">+972-50-000-0000</a>
+      </div>
+      <div class="cta-method">
+        <span class="label">אימייל</span>
+        <a class="value ltr" href="mailto:info@decredit.co.il">info@decredit.co.il</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <hr class="rule" style="margin-bottom:18px;">
+  <div>Decredit — ייעוץ וגישור ביטוחי עצמאי | ישראל</div>
+  <div class="disclaimer">Decredit פועלת כמתווכת ביטוח עצמאית ואינה מבטח. הכיסוי הביטוחי בפועל ניתן על ידי חברות ביטוח וחתמים מורשים, בהתאם לתנאי הפוליסה הרלוונטית.</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decredit | Political Risk Insurance & Structured Credit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F3862;
+    --ink-soft:#48597D;
+    --paper:#FFFFFF;
+    --paper-raised:#EEF1F7;
+    --accent:#7C93BE;
+    --accent-light:#B8C9E3;
+    --line:rgba(31,56,98,0.15);
+    --muted:#667085;
+    --max:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Assistant', sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Rubik', sans-serif;
+    font-weight:600;
+    line-height:1.2;
+    margin:0;
+    text-wrap:balance;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin-inline:auto; padding-inline:24px;}
+  .rule{border:none; border-top:1px solid var(--line); margin:0;}
+
+  /* ---------- Header ---------- */
+  header{padding-block:28px 0;}
+  .brand{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-bottom:22px;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand-logo{height:52px; width:auto; display:block;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding-block:64px 56px;
+    overflow:hidden;
+  }
+  .hero-route{
+    position:absolute;
+    inset-inline-end:-60px;
+    top:-10px;
+    width:420px;
+    max-width:60vw;
+    opacity:0.7;
+    pointer-events:none;
+  }
+  .kicker{
+    font-size:15px;
+    color:var(--ink);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(30px, 5vw, 44px);
+    max-width:16ch;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    max-width:52ch;
+    font-size:19px;
+    color:var(--ink-soft);
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    margin-top:34px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1px solid var(--ink);
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn-primary:hover{background:#16294A; border-color:#16294A;}
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+  }
+  .btn-ghost:hover{background:var(--paper-raised);}
+
+  /* ---------- Sections shared ---------- */
+  section{padding-block:52px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:28px;
+  }
+  .section-head h2{font-size:26px;}
+  .section-head .index{
+    font-family:'Rubik', sans-serif;
+    color:var(--accent);
+    font-size:15px;
+    font-weight:500;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .stat-row{
+    display:flex;
+    gap:36px;
+    margin-top:30px;
+    flex-wrap:wrap;
+  }
+  .stat b{
+    display:block;
+    font-family:'Rubik', sans-serif;
+    font-size:32px;
+    color:var(--ink);
+  }
+  .stat span{
+    font-size:14px;
+    color:var(--muted);
+  }
+
+  /* ---------- Services ---------- */
+  .service{
+    padding-block:26px;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .service:last-child{border-bottom:1px solid var(--line);}
+  .service h3{font-size:21px;}
+  .service p{color:var(--ink-soft); max-width:60ch;}
+  .service ul{
+    margin:6px 0 0;
+    padding-inline-start:20px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+  .service li{margin-bottom:4px;}
+
+  /* ---------- Why ---------- */
+  .why-list{
+    display:grid;
+    gap:22px;
+  }
+  .why-item{
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:16px;
+    align-items:start;
+  }
+  .why-item svg{margin-top:3px;}
+  .why-item h3{font-size:18px; margin-bottom:4px;}
+  .why-item p{color:var(--ink-soft); margin:0;}
+
+  /* ---------- Audience ---------- */
+  .audience-row{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  .tag{
+    border:1px solid var(--line);
+    padding:9px 16px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-block{
+    background:var(--ink);
+    color:var(--paper);
+    padding-block:56px;
+  }
+  .cta-block h2{color:var(--paper); font-size:28px; max-width:18ch;}
+  .cta-block p{color:var(--accent-light); max-width:48ch; margin-top:14px;}
+  .cta-methods{
+    margin-top:30px;
+    display:grid;
+    gap:14px;
+  }
+  .cta-method{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-block:16px;
+  }
+  .cta-method:last-child{border-bottom:1px solid rgba(255,255,255,0.18);}
+  .cta-method .label{font-size:14px; color:var(--accent-light);}
+  .cta-method .value{font-family:'Assistant',sans-serif; font-weight:600; font-size:17px;}
+  .cta-method a{text-decoration:none;}
+  .cta-method a:hover{color:var(--accent-light);}
+
+  footer{
+    padding-block:28px 40px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  footer .disclaimer{max-width:60ch; margin-top:10px; line-height:1.6;}
+
+  @media (max-width:600px){
+    .hero-route{display:none;}
+    .service{grid-template-columns:1fr;}
+    .stat-row{gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="brand">
+    <img class="brand-logo" src="decredit-logo.png" alt="Decredit — Export Financial Solutions">
+  </div>
+  <hr class="rule">
+</header>
+
+<section class="hero wrap">
+  <svg class="hero-route" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="brandGradEn" x1="0" y1="300" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#1F3862"/>
+        <stop offset="1" stop-color="#B8C9E3"/>
+      </linearGradient>
+    </defs>
+    <path d="M20 250 C 100 180, 140 200, 190 130 S 300 40, 400 30" stroke="url(#brandGradEn)" stroke-width="1.4" stroke-dasharray="1 7" stroke-linecap="round"/>
+    <circle cx="20" cy="250" r="4" fill="#1F3862"/>
+    <circle cx="190" cy="130" r="4" fill="#7C93BE"/>
+    <circle cx="400" cy="30" r="5" fill="#B8C9E3"/>
+    <path d="M60 60 C 130 90, 160 60, 220 90 S 330 150, 380 190" stroke="url(#brandGradEn)" stroke-width="1" stroke-dasharray="1 6" stroke-linecap="round" opacity="0.5"/>
+  </svg>
+  <div class="kicker">For exporters, banks &amp; lenders doing business abroad</div>
+  <h1>Protecting your cross-border deals from the risks you can't control</h1>
+  <p class="lede">Decredit is an independent insurance intermediary helping exporters, banks and lending institutions structure political risk and credit insurance for long-term deals in emerging markets — backed by direct access to specialist underwriters and over 25 years in the field.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#contact">Start a conversation</a>
+    <a class="btn btn-ghost" href="#services">See what we cover</a>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="about">
+  <div class="section-head">
+    <h2>About Decredit</h2>
+    <span class="index">Who we are</span>
+  </div>
+  <div class="about-grid">
+    <p>Decredit is an independent insurance intermediary specializing in political risk insurance and structured credit for long-tenor, cross-border transactions. We work alongside a London-based international broking network, which gives our clients direct access to leading specialty and Lloyd's markets — without the overhead of managing that relationship themselves.</p>
+    <p>Our focus has always been narrow by design: infrastructure and energy, agriculture and agtech, and project finance into developing markets. That focus is what lets us tell the difference between a risk that looks dangerous on paper and one that actually is.</p>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><b>25+</b><span>Years in the field</span></div>
+    <div class="stat"><b>PRI</b><span>Political risk insurance</span></div>
+    <div class="stat"><b>SC</b><span>Structured credit</span></div>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="services">
+  <div class="section-head">
+    <h2>What we do</h2>
+    <span class="index">Services</span>
+  </div>
+
+  <div class="service">
+    <h3>Political Risk Insurance (PRI)</h3>
+    <p>Protection for assets, contracts and cash flow against government action and contract breach in the markets where you operate or lend.</p>
+    <ul>
+      <li>Expropriation and confiscation of assets</li>
+      <li>Currency inconvertibility and transfer restriction</li>
+      <li>Contract frustration or non-payment by a government entity</li>
+      <li>Political violence, war and civil unrest</li>
+    </ul>
+  </div>
+
+  <div class="service">
+    <h3>Structured Credit</h3>
+    <p>Insurance built around the actual structure of the financing — for banks, lenders and exporters looking to reduce credit exposure on long-term, cross-border transactions.</p>
+    <ul>
+      <li>Protection for credit portfolios and project finance</li>
+      <li>Improved financing terms and capital treatment with regulators</li>
+      <li>Built around your deal structure, not sold off a shelf</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="why">
+  <div class="section-head">
+    <h2>Why work with us</h2>
+    <span class="index">The Decredit difference</span>
+  </div>
+  <div class="why-list">
+    <div class="why-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 6 L32 11 V19 C32 27 27 32 20 34 C13 32 8 27 8 19 V11 Z" stroke="#1F3862" stroke-width="1.4"/></svg>
+      <div>
+        <h3>Genuinely independent</h3>
+        <p>We aren't tied to a single insurer. The solution we recommend is the one that fits the deal — not a quota.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#1F3862" stroke-width="1.4"/><path d="M6 20 H34 M20 6 C24 12 24 28 20 34 C16 28 16 12 20 6Z" stroke="#1F3862" stroke-width="1.2"/></svg>
+      <div>
+        <h3>A direct line into global markets</h3>
+        <p>Our London-based broking partnership opens doors to specialty and Lloyd's underwriters that aren't easily reachable on your own.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 30 V16 L20 8 L32 16 V30" stroke="#1F3862" stroke-width="1.4"/><path d="M15 30 V22 H25 V30" stroke="#1F3862" stroke-width="1.4"/></svg>
+      <div>
+        <h3>One point of contact, start to finish</h3>
+        <p>From scoping the exposure, through underwriter negotiations, to policy management and claims — a single continuous relationship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule wrap">
+
+<section class="wrap" id="audience">
+  <div class="section-head">
+    <h2>Who we work with</h2>
+    <span class="index">Client profile</span>
+  </div>
+  <div class="audience-row">
+    <span class="tag">Exporters into emerging markets</span>
+    <span class="tag">Banks &amp; lending institutions</span>
+    <span class="tag">Infrastructure &amp; energy companies</span>
+    <span class="tag">Investors in overseas projects</span>
+  </div>
+</section>
+
+<section class="cta-block" id="contact">
+  <div class="wrap">
+    <h2>Ready to look at your exposure?</h2>
+    <p>Send a short note about the deal or portfolio you want to protect — we'll come back to you the same business day.</p>
+    <div class="cta-methods">
+      <div class="cta-method">
+        <span class="label">WhatsApp</span>
+        <a class="value" href="https://wa.me/972500000000" target="_blank" rel="noopener">+972-50-000-0000</a>
+      </div>
+      <div class="cta-method">
+        <span class="label">Email</span>
+        <a class="value" href="mailto:info@decredit.co.il">info@decredit.co.il</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <hr class="rule" style="margin-bottom:18px;">
+  <div>Decredit — Independent insurance intermediary | Israel</div>
+  <div class="disclaimer">Decredit acts as an independent insurance intermediary and is not an insurer. Cover is provided by authorized insurance companies and underwriters, subject to the terms of the relevant policy.</div>
+</footer>
+
+</body>
+</html>
